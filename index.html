@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Google API Directions App</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="row">
+            <div class="small-12 large-4 columns card">
+                <h2>Enter Destination Info</h2>
+                <div id="form">
+                    <h6>Origin/Destination Must Be in Valid "# Street Name City Province/State" Format</h6>
+                    <div>
+                        <label>Origin <span>Error: Verify that Address Exists and/or is in Valid Format</span></label>
+                        <input id="origin" type="text" pattern="^\d+\s[A-z]+\s[A-z]+\s+[A-z]+\s[A-z]{2}" required>
+                    </div>
+                    <div>
+                        <label>Destination <span>Error: Verify that Address Exists and/or is in Valid Format</span></label>
+                        <input id="destination" type="text" pattern="^\d+\s[A-z]+\s[A-z]+\s+[A-z]+\s[A-z]{2}" required>
+                    </div>
+                    <div>
+                        <label>Arrival Time <span>Error: Verify that Date/Time is Valid</span></label>
+                        <input id="arrival_time" type="datetime-local" required>
+                    </div>
+                    <button class="button" onclick="getDirections()">Get Directions</button>
+                    <div id="loader"></div>
+                </div>
+            </div>
+
+            <div id="directions" class="small-12 large-4 columns card"></div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
